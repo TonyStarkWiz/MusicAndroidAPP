@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/PeopleFragment"
+    android:id="@+id/starwars_navigation">
+
+    <fragment
+        android:id="@+id/PeopleFragment"
+        android:label="Rock"
+        tools:layout="@layout/fragment_people"
+        android:name="com.android.starwarscatapp.views.PeopleFragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/PlanetsFragment"
+        android:label="Pop"
+        tools:layout="@layout/fragment_planets"
+        android:name="com.android.starwarscatapp.views.PlanetsFragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/StarShipsFragment"
+        android:label="Classic"
+        tools:layout="@layout/fragment_star_ships"
+        android:name="com.android.starwarscatapp.views.StarShipsFragment">
+
+    </fragment>
+
+</navigation>
