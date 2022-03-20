@@ -17,7 +17,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [StarShipsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class StarShipsFragment : Fragment() {
+class StarShipsFragment : BaseFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null

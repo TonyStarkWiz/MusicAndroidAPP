@@ -1,4 +1,6 @@
 package com.android.starwarscatapp.views
 
-class BaseFragment {
+import androidx.fragment.app.Fragment
+
+open class BaseFragment : Fragment() {
 }
