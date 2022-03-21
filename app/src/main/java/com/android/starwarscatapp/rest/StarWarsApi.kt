@@ -3,6 +3,7 @@ package com.android.starwarscatapp.rest
 import com.android.starwarscatapp.model.StarWarsPeople
 import io.reactivex.Single
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface StarWarsApi {
 
@@ -18,7 +19,8 @@ interface StarWarsApi {
      * Companion object will handle the base url and the path
      */
     companion object {
-        const val BASE_URL = "https://www.swapi.tech/"
-        private const val STAR_WARS_PEOPLE = "api/people"
+        const val BASE_URL =
+            "https://itunes.apple.com/"
+        private const val STAR_WARS_PEOPLE = "search?term=rock&amp;media=music&amp;entity=song&amp;limit=50"
     }
 }

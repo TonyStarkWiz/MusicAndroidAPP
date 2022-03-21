@@ -19,7 +19,7 @@ class StarWarsPeoplePresenterImpl @Inject constructor(
     }
 
     override fun checkNetworkConnection() {
-        // no-op
+        // no - op
     }
 
     override fun getStarWarsCharacters() {
