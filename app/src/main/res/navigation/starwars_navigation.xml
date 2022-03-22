@@ -11,6 +11,9 @@
         tools:layout="@layout/fragment_people"
         android:name="com.android.starwarscatapp.views.PeopleFragment">
 
+        <action
+            android:id="@+id/action_PeopleFragment_to_PlanetsFragment"
+            app:destination="@id/PlanetsFragment" />
     </fragment>
 
     <fragment
