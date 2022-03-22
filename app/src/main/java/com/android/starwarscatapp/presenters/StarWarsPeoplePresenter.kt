@@ -1,6 +1,8 @@
 package com.android.starwarscatapp.presenters
 
-import com.android.starwarscatapp.model.People
+import android.provider.Contacts
+import com.android.starwarscatapp.model.Result
+import com.android.starwarscatapp.model.TrackMusic
 import com.android.starwarscatapp.rest.StarWarsRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -29,7 +31,7 @@ class StarWarsPeoplePresenterImpl @Inject constructor(
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { characters -> peopleViewContract?.charactersSuccess(characters.people) },
+                { characters -> peopleViewContract?.charactersSuccess(characters.results) },
                 { error -> peopleViewContract?.onError(error) }
             )
             .apply {
@@ -52,6 +54,6 @@ interface StarWarsPeoplePresenter {
 
 interface PeopleViewContract {
     fun loadingCharacters(isLoading: Boolean)
-    fun charactersSuccess(characters: List<People>)
+    fun charactersSuccess(characters: List<Result>)
     fun onError(error: Throwable)
 }

@@ -5,6 +5,8 @@ import com.android.starwarscatapp.views.PeopleFragment
 import com.android.starwarscatapp.views.PlanetsFragment
 import com.android.starwarscatapp.views.StarShipsFragment
 import dagger.Component
+import dagger.Subcomponent
+import javax.inject.Singleton
 
 @Component(
     modules = [
@@ -13,6 +15,8 @@ import dagger.Component
         PresentersModule::class
     ]
 )
+
+@Singleton
 interface StarWarsComponent {
     fun inject(mainActivity: MainActivity)
     fun inject(peopleFragment: PeopleFragment)

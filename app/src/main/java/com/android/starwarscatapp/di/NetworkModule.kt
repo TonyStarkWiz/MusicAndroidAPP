@@ -26,16 +26,12 @@ class NetworkModule {
         level = HttpLoggingInterceptor.Level.BODY
     }
 
-    @Provides
-    fun providesRequestInterceptor() = RequestInterceptor()
 
     @Provides
     fun providesOkHttpClient(
-        requestInterceptor: RequestInterceptor,
         loggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(requestInterceptor)
             .addInterceptor(loggingInterceptor)
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
@@ -44,7 +40,6 @@ class NetworkModule {
     }
 
     @Provides
-    @Singleton
     fun providesRetrofitService(okHttpClient: OkHttpClient, gson: Gson): StarWarsApi {
         return Retrofit.Builder()
             .baseUrl(StarWarsApi.BASE_URL)
